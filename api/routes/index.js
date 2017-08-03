@@ -8,7 +8,7 @@ router
 	.post(cnt1.addone);
 
 router
-	.route('/article/:articleid')
-	.get(cnt1.showone);
+	.route('/show')
+	.post(cnt1.showone);
 
 module.exports =router;

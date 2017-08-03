@@ -12,4 +12,4 @@ var articleSchema = new mongoose.Schema(
 		require :true
 	}
 });
-mongoose.model('article',articleSchema,'articlet');
+mongoose.model('article',articleSchema,'Reach');
