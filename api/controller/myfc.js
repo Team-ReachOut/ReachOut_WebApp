@@ -35,7 +35,7 @@ module.exports.addone = function(req,res)
 }
 module.exports.showone = function(req,res)
 {
-    reach.findOne({username: req.body.username,password  :req.body.password}, function(err,obj) { console.log(obj);
+    reach.findOne({email: req.body.email,password  :req.body.password}, function(err,obj) { console.log(obj);
     res.send(obj)});
 
 }
