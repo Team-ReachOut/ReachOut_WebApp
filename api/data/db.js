@@ -7,4 +7,4 @@ mongoose.connection.on('connected', function() {
   console.log('Mongoose connected to ' + dburl);
 });
 
-require('./articles.model');
+require('./reach.model');

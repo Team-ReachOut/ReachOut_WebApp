@@ -12,8 +12,6 @@ router
 	.route('/show')
 	.post(cnt1.showone);
 
-router
-	.route('/uploads/:picture')
-	.get(cnt1.showPhoto);
+
 
 module.exports =router;

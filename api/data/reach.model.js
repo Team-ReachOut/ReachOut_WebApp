@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var articleSchema = new mongoose.Schema(
+var reachSchema = new mongoose.Schema(
 {
 	name:
 	{
@@ -20,26 +20,25 @@ var articleSchema = new mongoose.Schema(
 		type : Number,
 		require :true
 	},
-	location : {
-    address : String,
-    coordinates : {
-      type : [Number],
-      index : '2dsphere'
-    }
+
+    address : {
+    	type:String,
+    	require : true
+    
   	},
   	age:{
   		type : Number,
 		require :true
   	},
-  	photo:{
-  		type :String,
-  		require :true
-
-  	},
+  	sex :
+	{
+		type :String,
+		require :true
+	},
 	password :
 	{
 		type :String,
 		require :true
 	}
 });
-mongoose.model('article',articleSchema,'Reach1');
+mongoose.model('reach',reachSchema,'Reach1');
