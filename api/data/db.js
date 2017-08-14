@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var dburl = 'mongodb://localhost:27017/reach';
+var dburl = 'mongodb://52.88.1.241:28000/reach';
 var retry = null;
 mongoose.connect(dburl);
 

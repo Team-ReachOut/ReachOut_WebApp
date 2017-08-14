@@ -41,4 +41,4 @@ var reachSchema = new mongoose.Schema(
 		require :true
 	}
 });
-mongoose.model('reach',reachSchema,'Reach1');
+mongoose.model('reach',reachSchema,'Reach2');
