@@ -20,4 +20,9 @@ router
 	.route('/docshow')
 	.post(cnt1.docshow);
 
+router
+	.route('/showall')
+	.get(cnt1.showall);
+
+
 module.exports =router;

@@ -80,4 +80,23 @@ module.exports.docshow = function(req,res)
     res.send(obj)});
 
 }
+module.exports.showall = function(req,res)
+{
+    doc
+		.find()
+		.exec(function(err,articles)
+		{
+			if(err){
+				console.log('err in finding :'+ err);
+				res
+				  .status(500)
+				  .json(err);
+			}
+			else{
+				console.log("found "+articles.length +"articles");
+				res
+				  .json(articles);
+			}
+		})
 
+}
