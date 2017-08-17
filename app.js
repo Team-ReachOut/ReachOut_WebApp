@@ -1,7 +1,7 @@
 require('./api/data/db.js');
 var express = require('express');
 var app     = express();
-var port    = process.env.PORT || 5000;
+var port    = process.env.PORT || 5199;
 var path = require('path');
 var route   = require('./api/routes');
 var bodyParser= require('body-parser');
