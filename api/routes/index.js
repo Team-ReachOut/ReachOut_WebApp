@@ -24,5 +24,8 @@ router
 	.route('/showall')
 	.get(cnt1.showall);
 
+router
+    .route('/uploads/:picture')
+    .get(cnt1.showPhoto);
 
 module.exports =router;

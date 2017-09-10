@@ -1,6 +1,5 @@
 var mongoose = require('mongoose');
 var reach =mongoose.model('reach');
-var multer = require('multer');
 var fs = require('fs');
 var doc = mongoose.model('reach_doc');
 module.exports.addone = function(req,res)
@@ -27,6 +26,8 @@ module.exports.addone = function(req,res)
 			}
 			else{
 				console.log('Record created successfully');
+                var bitmap = new Buffer(req.body.imageString, 'base64');
+                fs.writeFileSync("uploads/" + req.body.email + ".jpg", bitmap);
 				res
 				  .status(200)
 				  .json(reachs);
@@ -98,5 +99,13 @@ module.exports.showall = function(req,res)
 				  .json(articles);
 			}
 		})
+}
+
+module.exports.showPhoto = function (req,res) {
+
+    console.log(req.params.picture);
+    var img = fs.readFileSync('./uploads/' + req.params.picture);
+    res.writeHead(200, {'Content-Type': 'image/jpg' });
+    res.end(img, 'binary');
 
 }
