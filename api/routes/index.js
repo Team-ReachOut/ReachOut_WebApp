@@ -28,4 +28,8 @@ router
     .route('/uploads/:picture')
     .get(cnt1.showPhoto);
 
+router
+	.route('/update')
+	.post(cnt1.update);
+
 module.exports =router;

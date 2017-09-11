@@ -109,3 +109,26 @@ module.exports.showPhoto = function (req,res) {
     res.end(img, 'binary');
 
 }
+
+module.exports.update = function (req,res) {
+
+	reach
+		.updateOne({
+			"email": req.body.email
+		}, {
+			$set: {
+                "name": req.body.name,
+                "bloodgroup": req.body.bloodgroup,
+                "phonenumber": req.body.phonenumber,
+                "address": req.body.address,
+                "age": req.body.age,
+                "sex": req.body.sex,
+                "email" :req.body.email,
+                "password": req.body.password
+			}
+		}, function (err, results) {
+			console.log(results)
+			res.send('record updated')
+        });
+
+}
