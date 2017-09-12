@@ -128,7 +128,12 @@ module.exports.update = function (req,res) {
 			}
 		}, function (err, results) {
 			console.log(results)
-			res.send('record updated')
+            res
+				.status(200)
+				.send(JSON.stringify({ name: req.body.name, bloodgroup: req.body.bloodgroup,
+				email: req.body.email, phonenumber: req.body.phonenumber,
+				address: req.body.address, age: req.body.age, sex: req.body.sex,
+				password: req.body.password }, null, 3));
         });
 
 }
