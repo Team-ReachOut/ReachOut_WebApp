@@ -112,6 +112,14 @@ module.exports.showPhoto = function (req,res) {
 
 module.exports.update = function (req,res) {
 
+    fs.unlink('./uploads/' + req.body.email + '.jpg',function(err){
+        if(err) return console.log(err);
+        console.log('file deleted successfully');
+    });
+
+    var bitmap = new Buffer(req.body.imageString, 'base64');
+    fs.writeFileSync("uploads/" + req.body.email + ".jpg", bitmap);
+
 	reach
 		.updateOne({
 			"email": req.body.email
