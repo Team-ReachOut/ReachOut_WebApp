@@ -1,4 +1,20 @@
 var mongoose = require('mongoose');
+
+var relativeSchema = new mongoose.Schema({
+    relativeName : {
+        type : String,
+        required : true
+    },
+    relativeAge : {
+        type : Number,
+        required : true
+    },
+    relativeBloodgroup : {
+        type : String,
+        required : true
+    }
+});
+
 var reachSchema = new mongoose.Schema(
 {
 	name:
@@ -39,6 +55,7 @@ var reachSchema = new mongoose.Schema(
 	{
 		type :String,
 		require :true
-	}
+	},
+	relativeList : [relativeSchema]
 });
 mongoose.model('reach',reachSchema,'Reach2');

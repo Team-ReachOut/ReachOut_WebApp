@@ -14,7 +14,8 @@ module.exports.addone = function(req,res)
 			address:req.body.address,
 			age:req.body.age,
 			sex:req.body.sex,
-			password :req.body.password
+			password :req.body.password,
+            relativeList :null
 		},function(err,reachs)
 		{
 			if(err)
@@ -144,4 +145,26 @@ module.exports.update = function (req,res) {
 				password: req.body.password }, null, 3));
         });
 
+}
+
+module.exports.updateRelative = function (req, res) {
+
+	var newRelative = {
+		relativeName: req.body.relativeName,
+		relativeAge: req.body.relativeAge,
+		relativeBloodgroup: req.body.relativeBloodgroup
+	}
+
+	var oldRelatives = []
+
+    reach.findOne({email: req.body.email, password  :req.body.password}, function(err,obj) {oldRelatives = obj.relativeList})
+		.exec(function(err,doc){
+			doc.relativeList.push(newRelative);
+			doc.save(function(err,ur){
+				res.json(ur.relativeList[ur.relativeList.length-1]);
+				}
+
+			);
+
+        })
 }

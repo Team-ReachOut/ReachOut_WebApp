@@ -32,4 +32,8 @@ router
 	.route('/update')
 	.post(cnt1.update);
 
+router
+	.route('/updateRelative')
+	.post(cnt1.updateRelative);
+
 module.exports =router;
