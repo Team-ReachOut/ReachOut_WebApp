@@ -25,6 +25,10 @@ router
 	.get(cnt1.showall);
 
 router
+	.route('/showallrel')
+	.post(cnt1.showallrel);
+
+router
     .route('/uploads/:picture')
     .get(cnt1.showPhoto);
 

@@ -163,8 +163,15 @@ module.exports.updateRelative = function (req, res) {
 			doc.save(function(err,ur){
 				res.json(ur.relativeList[ur.relativeList.length-1]);
 				}
-
 			);
 
         })
+}
+module.exports.showallrel = function (req, res) {
+
+	
+    reach.findOne({email: req.body.email}, function(err,obj) {oldRelatives = obj.relativeList})
+		.exec(function(err,doc){
+				res.json(doc.relativeList);
+				});
 }
