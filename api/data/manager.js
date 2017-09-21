@@ -1,17 +1,12 @@
 var mongoose = require('mongoose');
 require('mongoose-double')(mongoose);
 var SchemaTypes = mongoose.Schema.Types;
-var reach_docSchema = new mongoose.Schema(
+var manager = new mongoose.Schema(
 {
 	name:
 	{
 		type :String,
 		require :true
-	},
-	email:
-	{
-		type :String,
-		require : true
 	},
 	phonenumber:
 	{
@@ -19,25 +14,20 @@ var reach_docSchema = new mongoose.Schema(
 		require :true
 	},
 
-    address : {
+    email : {
     	type:String,
     	require : true
     
   	},
-	password :
+  	city:
+  	{
+  		type : String,
+  		require :true
+  	},
+  	password :
 	{
 		type :String,
 		require :true
-	},
-	lat :
-	{
-		 type: SchemaTypes.Double
-		
-	},
-	lon :
-	{
-		 type: SchemaTypes.Double
-		
 	}
 });
-mongoose.model('reach_doc',reach_docSchema,'Reach_doc');
+mongoose.model('manager',manager,'Manager');
