@@ -24,3 +24,20 @@ module.exports.addhospital = function(req,res)
 	});
 }
 
+module.exports.showall=function(req,res)
+{
+	hospital
+		.find()
+		.exec(function(err,hospitals)
+		{
+			if(err)
+			{
+				res.status(400)
+				   .json(err);
+			}
+			else
+			{
+				res.json(hospitals);
+			}
+		})
+}
