@@ -23,6 +23,11 @@ var reach_regis = new mongoose.Schema(
   	{
   		type : String,
   		require :true
-  	}
+  	},
+  	verified: 
+  	{
+      type: Boolean,
+      default: false
+    }
 });
 mongoose.model('reach_regis',reach_regis,'Reach_regis');

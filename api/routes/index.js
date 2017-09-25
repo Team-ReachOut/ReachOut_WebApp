@@ -3,6 +3,7 @@ var router = express.Router();
 
 var cnt1 = require('../controller/myfc.js');
 var cnt2 = require('../controller/managercontroller.js');
+var cnt3 = require('../controller/hospitalregistration.js');
 
 router
 	.route('/addone')
@@ -47,5 +48,17 @@ router
 router
 	 .route('/getmanager')
 	 .post(cnt2.getonemanager);
+
+router
+	.route('/addhospital')
+	.post(cnt3.addhospital);
+
+router
+	.route('/showhospitals')
+	.get(cnt3.showall);
+
+router
+	.route('/updateverified')
+	.post(cnt3.updateit);
 
 module.exports =router;
