@@ -61,4 +61,8 @@ router
 	.route('/updateverified')
 	.post(cnt3.updateit);
 
+router
+	.route('/getHospitalInfo')
+	.post(cnt3.getHospitalInfo);
+
 module.exports =router;

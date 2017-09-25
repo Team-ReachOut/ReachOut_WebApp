@@ -65,3 +65,18 @@ module.exports.updateit=function(req,res)
 		});
 
 }
+
+module.exports.getHospitalInfo = function (req, res) {
+
+	hospital.findOne({name: req.body.name}, function (err, hospital) {
+        if(err) {
+            res.status(400)
+                .json(err);
+        }
+        else {
+        	res.status(200)
+            res.json(hospital);
+        }
+    })
+
+}
