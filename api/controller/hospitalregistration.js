@@ -41,3 +41,27 @@ module.exports.showall=function(req,res)
 			}
 		})
 }
+module.exports.updateit=function(req,res)
+{
+	hospital
+		.updateOne({
+			"email":req.body.email
+		},{
+			$set :{
+				"verified" :true
+			}
+		},function(err,resp)
+		{
+			if(err)
+			{
+				res.status(400)
+				   .json(err);
+			}
+			else
+			{
+				res.status(200)
+				   .json("verified");
+			}
+		});
+
+}
