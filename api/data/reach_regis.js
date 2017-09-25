@@ -24,6 +24,11 @@ var reach_regis = new mongoose.Schema(
   		type : String,
   		require :true
   	},
+    email:
+  	{
+  		type : String,
+  		require :true
+  	},
   	verified: 
   	{
       type: Boolean,
