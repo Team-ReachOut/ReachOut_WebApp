@@ -1,4 +1,4 @@
-9var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var manager = mongoose.model('manager');
 
 module.exports.addmanager = function(req,res)
@@ -22,4 +22,20 @@ module.exports.addmanager = function(req,res)
 		}
 
 	});
+}
+module.exports.getonemanager = function(req,res)
+{
+	manager.findOne({email:req.body.email,password:req.body.password},function(err,manager){
+		
+		if(err)
+		{
+			res.status(400)
+			   .json(err);
+		}
+		else
+		{
+			res.json(manager);
+		}
+
+	})
 }
