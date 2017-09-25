@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-var cnt1=require('../controller/myfc.js');
-
+var cnt1 = require('../controller/myfc.js');
+var cnt2 = require('../controller/managercontroller.js');
 
 router
 	.route('/addone')
@@ -39,5 +39,13 @@ router
 router
 	.route('/updateRelative')
 	.post(cnt1.updateRelative);
+
+router
+	 .route('/addmanager')
+	 .post(cnt2.addmanager);
+
+router
+	 .route('/getmanager')
+	 .post(cnt2.getonemanager);
 
 module.exports =router;

@@ -86,7 +86,7 @@ module.exports.showall = function(req,res)
 {
     doc
 		.find()
-		.exec(function(err,articles)
+		.exec(function(err,doc)
 		{
 			if(err){
 				console.log('err in finding :'+ err);
@@ -95,9 +95,9 @@ module.exports.showall = function(req,res)
 				  .json(err);
 			}
 			else{
-				console.log("found "+articles.length +"articles");
+				console.log("found "+doc.length +"doc");
 				res
-				  .json(articles);
+				  .json(doc);
 			}
 		})
 }

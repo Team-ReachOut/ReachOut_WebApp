@@ -9,3 +9,5 @@ mongoose.connection.on('connected', function() {
 
 require('./reach.model');
 require('./reach_doc.model');
+require('./manager');
+require('./reach_regis');

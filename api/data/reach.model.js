@@ -43,7 +43,7 @@ var reachSchema = new mongoose.Schema(
     
   	},
   	age:{
-  		type : Number,
+  		type: Number,
 		require :true
   	},
   	sex :
