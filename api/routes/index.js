@@ -26,8 +26,8 @@ router
 	.get(cnt1.showall);
 
 router
-	.route('/showallrel')
-	.post(cnt1.showallrel);
+	.route('/showallrel/:email')
+	.get(cnt1.showallrel);
 
 router
     .route('/uploads/:picture')

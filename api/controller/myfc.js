@@ -170,7 +170,7 @@ module.exports.updateRelative = function (req, res) {
 module.exports.showallrel = function (req, res) {
 
 	
-    reach.findOne({email: req.body.email}, function(err,obj) {oldRelatives = obj.relativeList})
+    reach.findOne({email: req.params.email}, function(err,obj) {oldRelatives = obj.relativeList})
 		.exec(function(err,doc){
 				res.json(doc.relativeList);
 				});
