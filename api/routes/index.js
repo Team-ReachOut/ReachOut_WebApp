@@ -65,4 +65,7 @@ router
 	.route('/getHospitalInfo')
 	.post(cnt3.getHospitalInfo);
 
+router
+	.route('/hospitals')
+	.get(cnt3.showhospitals);
 module.exports =router;
