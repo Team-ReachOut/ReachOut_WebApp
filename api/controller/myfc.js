@@ -47,16 +47,10 @@ module.exports.docadd = function(req,res)
 	doc
 		.create({
 			name : req.body.name,
-			//bloodgroup  :req.body.bloodgroup,
 			email:req.body.email,
 			phonenumber:req.body.phonenumber,
 			address:req.body.address,
-			//age:req.body.age,
-			//sex:req.body.sex,
 			password :req.body.password,
-			driver_name:req.body.driver_name,
-			driver_pnumber:req.body.driver_pnumber,
-			ambulance:req.body.ambulance,
 			lat:req.body.lat,
 			lon:req.body.lon
 		},function(err,reachs)
@@ -159,7 +153,15 @@ module.exports.updateRelative = function (req, res) {
 
     reach.findOne({email: req.body.email, password  :req.body.password}, function(err,obj) {oldRelatives = obj.relativeList})
 		.exec(function(err,doc){
-			doc.relativeList.push(newRelative);
+			if(doc.relativeList==undefined)
+			{
+				doc.relativeList=[];
+				doc.relativeList.push(newRelative);
+			}
+			else
+			{
+                doc.relativeList.push(newRelative);
+			}
 			doc.save(function(err,ur){
 				res.json(ur.relativeList[ur.relativeList.length-1]);
 				}

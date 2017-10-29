@@ -60,7 +60,7 @@ module.exports.updateit=function(req,res)
 			else
 			{
 				res.status(200)
-				   .json("verified");
+				   .json(resp);
 			}
 		});
 
