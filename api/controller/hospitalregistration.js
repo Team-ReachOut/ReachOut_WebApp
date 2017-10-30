@@ -95,5 +95,23 @@ module.exports.showhospitals=function(req,res)
 			{
 				res.json(hospitals);
 			}
-		})
+		});
+}
+
+module.exports.unique = function(req,res)
+{
+
+	hos
+		.distinct("speciality",function(err,hospitals)
+		{
+			if(err)
+			{
+				res.status(400)
+				   .json(err);
+			}
+			else
+			{
+				res.json(hospitals);
+			}
+		});
 }

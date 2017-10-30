@@ -68,4 +68,12 @@ router
 router
 	.route('/hospitals')
 	.get(cnt3.showhospitals);
+
+router
+	.route('/unique')
+	.get(cnt3.unique);
+
+
+
+
 module.exports =router;
