@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 var hospital = mongoose.model('reach_regis');
-
+var hos=mongoose.model('hospital_model');
 module.exports.addhospital = function(req,res)
 {
 	hospital.create({
@@ -77,6 +77,23 @@ module.exports.getHospitalInfo = function (req, res) {
         	res.status(200)
             res.json(hospital);
         }
-    })
+    });
 
+}
+module.exports.showhospitals=function(req,res)
+{
+	hos
+		.find()
+		.exec(function(err,hospitals)
+		{
+			if(err)
+			{
+				res.status(400)
+				   .json(err);
+			}
+			else
+			{
+				res.json(hospitals);
+			}
+		})
 }

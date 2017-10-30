@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var dburl = 'mongodb://localhost:27017/reach';
  // var dburl = 'mongodb://52.88.1.241:28000/reach';
+
 var retry = null;
 mongoose.connect(dburl);
 
@@ -12,3 +13,4 @@ require('./reach.model');
 require('./reach_doc.model');
 require('./manager');
 require('./reach_regis');
+require('./hospital_model');
