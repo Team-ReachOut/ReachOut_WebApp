@@ -73,7 +73,10 @@ router
 	.route('/unique')
 	.get(cnt3.unique);
 
+router
+	.route('/bloodbank')
+	.get(cnt3.bloodbanklist);
 
-
+	
 
 module.exports =router;
