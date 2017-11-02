@@ -132,3 +132,23 @@ module.exports.bloodbanklist = function(req,res)
 			}
 		});
 }
+
+module.exports.filter = function(req,res)
+{
+
+	var stype=req.body.speciality;
+	console.log(stype);
+	hos.
+		find({speciality:stype},function(err,hospitals)
+		{
+			if(err)
+			{
+				res.status(400)
+				   .json(err);
+			}
+			else
+			{
+				res.json(hospitals);
+			}
+		});
+}
