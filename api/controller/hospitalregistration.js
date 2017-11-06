@@ -141,8 +141,7 @@ module.exports.filter = function(req,res)
 	hos.
 		find({speciality:stype},function(err,hospitals)
 		{
-			if(err)
-			{
+			if(err) {
 				res.status(400)
 				   .json(err);
 			}
