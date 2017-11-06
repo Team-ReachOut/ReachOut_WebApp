@@ -136,7 +136,7 @@ module.exports.bloodbanklist = function(req,res)
 module.exports.filter = function(req,res)
 {
 
-	var stype=req.body.speciality;
+	var stype=req.params.specialityy;
 	console.log(stype);
 	hos.
 		find({speciality:stype},function(err,hospitals)

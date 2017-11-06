@@ -78,7 +78,7 @@ router
 	.get(cnt3.bloodbanklist);
 
 router
-	 .route('/speciality')
-	 .post(cnt3.filter);
+	 .route('/speciality/:specialityy')
+	 .get(cnt3.filter);
 
 module.exports =router;
